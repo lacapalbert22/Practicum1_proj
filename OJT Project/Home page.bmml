@@ -1,0 +1,129 @@
+<mockup version="1.0" skin="wireframe" fontFace="Balsamiq Sans" measuredW="953" measuredH="563" mockupW="743" mockupH="549">
+  <controls>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TitleWindow" x="210" y="14" w="743" h="543" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bottomheight>36</bottomheight>
+        <close>true</close>
+        <dragger>false</dragger>
+        <maximizeRestore>true</maximizeRestore>
+        <minimize>true</minimize>
+        <text>SLU%20iRecruit</text>
+        <topheight>26</topheight>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="210" y="84" w="743" h="438" measuredW="200" measuredH="204" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <bold>false</bold>
+        <borderStyle>square</borderStyle>
+        <color>16777215</color>
+        <position>left</position>
+        <selectedIndex>0</selectedIndex>
+        <size>14</size>
+        <text>HOME%0ACOMPANY%0ARECRUIT%0ASCHEDULE%0AACCOUNT</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="216" y="402" w="75" h="111" measuredW="250" measuredH="385" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./Saint_Louis_University_%28Baguio%29_logo.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="__group__" x="210" y="37" w="743" h="71" measuredW="743" measuredH="71" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="743" h="71" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="31">
+          <controlProperties>
+            <borderColor>6710886</borderColor>
+            <color>13421772</color>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Paragraph" x="6" y="9" w="319" h="32" measuredW="200" measuredH="80" zOrder="1" locked="false" isInGroup="31">
+          <controlProperties>
+            <size>24</size>
+            <text>Welcome%20Dela%20Cruz%2C%20Juan%21</text>
+            <underline>false</underline>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Paragraph" x="6" y="39" w="211" h="25" measuredW="200" measuredH="80" zOrder="2" locked="false" isInGroup="31">
+          <controlProperties>
+            <size>14</size>
+            <text>Today%20is%2001/02/2018</text>
+            <underline>false</underline>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Paragraph" x="599" y="9" w="88" h="32" measuredW="200" measuredH="80" zOrder="3" locked="false" isInGroup="31">
+          <controlProperties>
+            <size>20</size>
+            <text>Admin23</text>
+            <underline>false</underline>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Paragraph" x="627" y="37" w="53" h="29" measuredW="200" measuredH="80" zOrder="4" locked="false" isInGroup="31">
+          <controlProperties>
+            <size>15</size>
+            <text>Logout</text>
+            <underline>true</underline>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Icon" x="687" y="11" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="5" locked="false" isInGroup="31">
+          <controlProperties>
+            <color>0</color>
+            <icon>ContactIcon%7Clarge</icon>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::Paragraph" x="481" y="522" w="200" h="41" measuredW="200" measuredH="80" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>Copyright%20%20%A9%20Saint%20Loius%20University%20%0A%20%20%20%20All%20Rights%20Reserved</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::ButtonBar" x="316" y="132" w="606" h="28" measuredW="252" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Company%20Schedule%20Events%2CNews</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::Canvas" x="316" y="160" w="606" h="338" measuredW="100" measuredH="70" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <borderStyle>square</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="906" y="160" w="-1" h="338" measuredW="16" measuredH="100" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <value>2</value>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Paragraph" x="323" y="167" w="486" h="88" measuredW="200" measuredH="80" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>17</size>
+        <text>Today%27s%20Event%20%3A%20Trend%20Micro%20Cyber%20Security%20Seminar%20and%20Recruitment%28Ongoing%29%0A%09%09%09%09@%20SLU%20Bakakeng%20AVR%20ROOM%2010th%20Floor%20%0A%09%09%099%3A00am-12%3A00pm</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::HRule" x="316" y="280" w="590" h="-1" measuredW="100" measuredH="10" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Paragraph" x="747" y="255" w="150" h="27" measuredW="200" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>17</size>
+        <text>view%20attachment....</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Paragraph" x="323" y="290" w="538" h="97" measuredW="200" measuredH="80" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>17</size>
+        <text>Upcomming%20Event%20%3A%20Amazon%20Web%20Services%2C%20On%20the%20Job%20Training%20Recruitment%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%09@%20SLU%20Bakakeng%2C%20Seraphin%20Devesse%20Lobby%0A%20%20%09%09%20%09%0910%3A00am-4%3A00pm%20%28February%2011%2C%202018%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::HRule" x="316" y="387" w="590" h="-1" measuredW="100" measuredH="10" zOrder="12" locked="false" isInGroup="-1"/>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Paragraph" x="246" y="409" w="599" h="97" measuredW="200" measuredH="80" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>17</size>
+        <text>Upcomming%20Event%20%3A%20Accenture%20Job%20Fair%20Recruitment%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%09@%20SLU%20Bakakeng%2C%20Seraphin%20Devesse%20Lobby%0A%20%20%09%09%20%09%098%3A00am-3%3A00pm%20%28March%2016%2C%202018%29</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
