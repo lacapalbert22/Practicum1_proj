@@ -6,13 +6,13 @@
     margin:0; 
 }
 
-body{
+.loginimg{
     margin: 0px;
     padding: 0px;
     height:100%;
     width:100%;
     margin:auto;
-    background-image:url("image2.jpg");
+    background-image:url("image1.jpg");
     top:0;
     background-size:cover;
     background-attachment:fixed;
@@ -150,5 +150,10 @@ nav ul li a:hover{
 }
 .selected a{
     color:black;
+}
+
+.color{
+    background-color: lightgray;
+
 }
 
