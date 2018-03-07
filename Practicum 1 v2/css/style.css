@@ -2,18 +2,21 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster+Two|Montserrat');
 
 *{
-    padding: 0;
-    margin:0;
+    padding:0;
+    margin:0; 
 }
+
 body{
     margin: 0px;
     padding: 0px;
-	width: 100%;
-	height: 100%;
-	background-image: url("image1.jpg");
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center; 
+    height:100%;
+    width:100%;
+    margin:auto;
+    background-image:url("image2.jpg");
+    top:0;
+    background-size:cover;
+    background-attachment:fixed;
+    display:table;
 }
 
 .loginbox{
@@ -22,10 +25,12 @@ body{
     background-color: white;
     color: black;
     top:50%;
+    left:50%;
     position:absolute;
+    transform: translate(-50%,-50%);
     box-sizing: border-box;
     padding: 70px 30px;
-	font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .user{
@@ -43,7 +48,7 @@ h1{
     padding: 0 0 20px;
     text-align: center;
     font-size: 45px;
-	font-family: 'Lobster Two', cursive;
+    font-family: 'Lobster Two', cursive;
 }
 
 .loginbox p{
@@ -75,7 +80,7 @@ h1{
     background-color: #000066;
     color:#fff;
     border-radius: 20px;
-	font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     
 }
 footer {
@@ -85,9 +90,9 @@ footer {
   left: 0;
   padding: 1rem;
   background-color: #efefef;
-  text-align: center; 
-
+  text-align: center;  
 }
+
 
 /**HOME CSS**/
 .slulogo{
@@ -147,11 +152,3 @@ nav ul li a:hover{
     color:black;
 }
 
-.boxhead{
-    padding: 0;
-    margin:0
-    background-image:url("css/solidwhite.jpg");
-    background-size:cover;
-    background-attachment:fixed;
-    display:table;
-}
