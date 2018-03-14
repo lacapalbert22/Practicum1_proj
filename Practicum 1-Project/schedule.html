@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head>        
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Schedule</title>
         <link rel="icon" href="images/slulogo.png">
+       
         
         <link rel="stylesheet" type="text/css" href="css/style.css" title="main">
     </head>
@@ -21,7 +23,34 @@
                 <li class="selected"><a href="schedule.html">SCHEDULE</a></li>
             </ul>
         </nav>
+<button id="addsched">Add Schedule</button>
+<div id="add-sched" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>For add Schedule</p>
+    </div>
+</div>
+<script src="css/addsched.js"></script>
 
+<button id="viewpar">View Participants</button>
+<div id="view-par" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>For View Participants</p>
+    </div>
+</div>
+<script src="css/viewpar.js"></script>
+
+<button id="delsched">Delete Schedule</button>
+<div id="del-sched" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>For Delete Participants</p>
+    </div>
+</div>
+<script src="css/delsched.js"></script>
+
+		 
     </body>
 
     <footer>
