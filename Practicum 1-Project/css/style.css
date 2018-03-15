@@ -222,7 +222,7 @@ footer {
 
 #viewpar{
   position: absolute;
-    right:560px;
+    right:570px;
     bottom:100px;
     font-size: 15px;
     margin-right: 17px;
@@ -247,7 +247,7 @@ footer {
 
 /* The Modal (background) */
 
-.modal {
+.modal,.modal1,.modal2 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -261,6 +261,8 @@ footer {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+
+
 /* Modal Content */
 .modal-content {
     background-color: #fefefe;
@@ -271,16 +273,27 @@ footer {
 }
 
 /* The Close Button */
-.close {
+.close,.close1,.close2{
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover,.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
+.close1:hover,.close1:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close2:hover,.close2:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
