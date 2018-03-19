@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php include 'database.php'; ?>
+<?php
+ include_once 'dbh.inc.php';
+?>
 <html lang="en">
     <head>        
         <meta charset="utf-8">
@@ -11,6 +13,17 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" title="main">
     </head>
     <body class ="color">
+<?php
+	$sql = "SELECT * FROM mytable";
+	$result = mysqli_query($connection, $sql);
+	$resultCheck = mysqli_num_rows($result);
+	
+	if ($resultCheck > 0) {
+		while ($row = mysqli_fetch_assoc($result)) {
+		   echo $row['id'] . "<br>";
+		}
+	}
+?>	
         <div class="boxhead">
         <div class ="header-container">
          <img src="images/slulogo.png" class="slulogo">
