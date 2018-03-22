@@ -20,7 +20,10 @@
 	
 	if ($resultCheck > 0) {
 		while ($row = mysqli_fetch_assoc($result)) {
-		   echo $row['id'] . "<br>";
+           
+           echo '<div class ="db">';
+           echo $row['id'];
+           echo '</div>';
 		}
 	}
 ?>	
@@ -35,14 +38,17 @@
             <ul>
                 <li><a href="home.html">HOME</a></li>
                 <li><a href="company.html">COMPANY</a></li>
-                <li class="selected"><a href="schedule.html">SCHEDULE</a></li>
+                <li class="selected"><a href="schedule.php">SCHEDULE</a></li>
             </ul>
         </nav>
+
+
+ <!-- Add Sched -->       
 <button id="addsched">Add Schedule</button>
 <div id="add-sched" class="modal">
     <div class="modal-content">
     <span class="close">&times;</span>
-        <table class="form1">
+        <table>
         <tr>
             <td>Event Name</td>
             <td><input type="text" name="Event_name" value=""></td>
@@ -56,17 +62,14 @@
             <td><input type="text" name="Venue" value=""></td>
         </tr>
         <tr>
-            <td>Class</td>
+            <td>Time</td>
             <td><input type="text" name="roll_no" value=""></td>
             </td>
         </tr>
         <tr>
-        <td>Gender</td>
+        <td>Date</td>
         <td>
-        <select name="gender">
-            <option value="">Please Select</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+     
         </td>
     </tr>
     <tr>
@@ -77,28 +80,43 @@
 
     </div>
 </div>
-
+<!-- View Participants -->
 <button id="viewpar">View Participants</button>
 <div id="view-par" class="modal1">
     <div class="modal-content">
     <span class="close1">&times;</span>
-    <p>For View Participants</p>
+    <p>View Schedule</p>
+    
+    <input class="AddPar" type="submit" value="Add ">
+    <div id="add-par" class="modalpar1">
+    <div class="modal-content">
+    <span class="closepar1">&times;</span>
+    <p>Add Participants</p>
+    </div>
+    
+    <input class="ViewPar1" type="submit" value="View Participants">
+    <input class="DeletePar" type="submit" value="Delete Participants">
+
     </div>
 </div>
 
-
+<!-- Delete Schedule -->
 <button id="delsched">Delete Schedule</button>
 <div id="del-sched" class="modal2">
     <div class="modal-content">
     <span class="close2">&times;</span>
+    <p>Are you Sure you want to Delete this Schedule</p>
+    <input class="YesDel" type="submit" value="Yes">
+    <input class="nodelete" type="submit" value="No">
 
     </div>
 </div>
 
 
 
-<script src="css/addsched.js"></script>
 
+
+<script src="css/addsched.js"></script>
 		 
     </body>
 

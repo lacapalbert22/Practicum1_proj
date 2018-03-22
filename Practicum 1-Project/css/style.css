@@ -222,7 +222,7 @@ footer {
 }
 
 #viewpar{
-  position: absolute;
+    position: absolute;
     right:570px;
     bottom:100px;
     font-size: 15px;
@@ -246,13 +246,10 @@ footer {
 }
 
 .save{
-   position: absolute;
     right:0;
     left:600px;
     top:250px;
-
     font-size: 15px;
-    margin-right: 17px;
     padding-right: 10px;
     padding-left: 10px;
     font-family: 'Montserrat', sans-serif;
@@ -260,18 +257,16 @@ footer {
 }
 
 .cancel{
-    position: absolute;
     right:0;
     left:700px;
     top:250px;
-
-    font-size: 15px;
-    margin-right: 17px;
+  font-size: 15px;
     padding-right: 10px;
     padding-left: 10px;
     font-family: 'Montserrat', sans-serif;
 
 }
+
 
 
 /* The Modal (background) */
@@ -327,3 +322,9 @@ footer {
 }
 
 
+.db{
+    position: absolute;
+    left: 100px;
+    top: 0px;
+    right: 0px;
+  }
