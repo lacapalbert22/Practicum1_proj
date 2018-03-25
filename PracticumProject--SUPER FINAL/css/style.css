@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Nunito:700|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Mina');
+
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+	height: 100%;
+	width: 100%;
+}
+
+/*header_window*/
+.header-container{
+	height: 70px;
+	width: 100%;
+	background-color: #000040;
+	border-bottom: 5px solid #B8860B;
+}
+
+.scislogo{
+	float: left;
+	width: 70px;
+	height: 59px;
+	padding: 5px;
+}
+
+#title-page{
+	color: #fff;
+	padding: 15px;
+	font-size: 30px;
+	font-family: 'Montserrat', sans-serif;
+	position: relative;
+	font-weight: bold;
+}
+
+#logout-btn{
+	float: right;
+	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;
+	font-size: 14px;
+	background-color: #fff;
+	padding: 5px;
+	position: relative;
+	bottom: 45px;
+	margin-right: 15px; 
+}
+/*end of header_window*/
+
+
+/*navigation*/
+.nav-container{
+	width: 250px;
+	height: 666px;
+	background-color: #000040;
+	font-size: 15px;
+	font-family: 'Mina', sans-serif;
+}
+
+.nav-container a{
+	text-decoration: none;
+	color: #fff;
+	padding: 20px;
+	padding-right: 100px;
+}
+
+.nav-container ul li{
+	list-style-type: none;
+	display: block;
+	padding: 12px;
+	border-bottom: 3px solid #00008d;
+	position: relative;
+}
+
+.nav-container ul li:hover{
+	background-color: #fff;
+	transition: linear all 0.40s;
+	margin-left: 9px;
+}
+
+.nav-container ul li a:hover{
+	color: black;
+}
+
+.selected{
+	background-color: #fff;
+}
+
+.selected a{
+	color: black;
+}
+
+.fa{
+	margin-right: 10px;
+}
+/*end of navigation*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*footer*/
+#footer{
+	height: 35px;
+	width: 100%;
+	background-color: #000040;
+	border-top: 5px solid #B8860B;
+	position: absolute;
+	font-size: 14px;
+	text-align: center;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	padding-top: 10px;
+}
+/*end of footer*/
+
