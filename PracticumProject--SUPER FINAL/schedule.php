@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
- include 'dbh.inc.php';
+ include 'includes/dbh.inc.php';
 ?>
 <html lang="en">
 
@@ -56,7 +56,7 @@
         <div class="nav-container">
             <ul>
                 <li>
-                    <a href="home.html"><i class="fa fa-home"></i>HOME</a>
+                    <a href="home.php"><i class="fa fa-home"></i>HOME</a>
                 </li>
 
                 <li>
@@ -93,7 +93,7 @@
 <div id="add-sched" class="modal">
     <div class="modal-content">
     <span class="close">&times;</span>
-     <form method="POST" action="submit.inc.php">
+     <form method="POST" action="includes/submit.inc.php">
         <input type="text" name="companyname" placeholder="CompanyName">
         <br>
         <input type="text" name="companydesc" placeholder="CompanyDescription">
@@ -121,6 +121,50 @@
 
     </div>
     </div>
+
+<div id="view-sched" class="modal1">
+    <div class="modal-content">
+    <span class="close1">&times;</span>
+
+    <button id="viewpar">View Participants</button>
+</div>
+</div>
+
+<div id="del-sched" class="modal2">
+    <div class="modal-content">
+    <span class="close2">&times;</span>
+
+          <?php
+    $hostname = "localhost";
+    $username = "root";
+    $password = "";
+    $databaseName = "sample";
+    $connect = mysqli_connect($hostname, $username, $password, $databaseName);
+    $query = "SELECT * FROM `events`";
+    $result = mysqli_query($connect, $query);
+
+
+
+
+
+    ?>  
+     <form action="includes/delete.php" method="post">
+          <select name="deletedata">
+
+            <?php while($row1 = mysqli_fetch_array($result)):;?>
+
+            <option value="<?php echo $row1[0];?>"><?php echo $row1[1];?></option>
+
+            <?php endwhile;?>
+
+        </select>
+
+          <input type="submit" name="delete" value="Clear Data">
+     </form>
+</div>
+</div>
+  
+
 
 
     

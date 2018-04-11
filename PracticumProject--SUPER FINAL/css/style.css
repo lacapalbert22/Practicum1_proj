@@ -116,7 +116,7 @@ body{
     font-family: 'Montserrat', sans-serif;
 
 }
-.modal,.modal1,.modalpar1 {
+.modal,.modal1,.modal2,.modalpar1 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -142,7 +142,7 @@ body{
 }
 
 /* The Close Button */
-.close,.close1,.closepar1{
+.close,.close1,.close2,.closepar1{
     color: #aaaaaa;
     float: right;
     font-size: 28px;
@@ -165,7 +165,12 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
-
+}
+.close2:hover,.close2:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
 
@@ -174,11 +179,26 @@ body{
  
 .db{
     position: absolute;
-    color:;
     left: 500px;
     top: 200px;
     right: 0px;    
   }
+
+.eventhome{
+	position: absolute;
+    left: 500px;
+    top: 200px;
+    right: 0px;
+    margin:10px;
+   
+
+}
+.tdpow{
+	bottom:100px;
+}
+
+
+
 
 
 .addschedfunc{
