@@ -10,6 +10,7 @@
         <link rel="icon" href="images/slulogo.png">
         <link rel="stylesheet" type="text/css" href="css/style.css" title="main">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
