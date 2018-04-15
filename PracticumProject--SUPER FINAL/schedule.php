@@ -3,7 +3,6 @@
  include 'includes/dbh.inc.php';
 ?>
 <html lang="en">
-
     <head>
         <meta charset="utf-8">
         <title>SCHEDULE</title>
@@ -12,22 +11,13 @@
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
          <link rel="stylesheet" type="text/css" href="css/style.css" title="main">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-
-
 
     </head>
-
     <body>
-
-
         <table class ="db" width="600" border="1" cellpadding"1" cellspacing="1">
         <th>Company Name</th>
         <th>Company Description</th>
-        <th>Available Slots</th>
-   
-
-        
+        <th>Available Slots</th> 
         <?php
         $sql = "SELECT * FROM events";
         $result = mysqli_query($con,$sql);
@@ -40,7 +30,10 @@
            echo '<td>'.$row['event_name'].'</td>';
            echo '<td>'.$row['event_desc'].'</td>';
            echo '<td>'.$row['available_slot'].'</td>';
-           echo '</tr>';        }
+           echo '<td><a href="edit.php"</td>';
+           echo '</tr>';
+               
+       }
     }
         ?>  
     </table>
@@ -71,9 +64,7 @@
         </div>
         <!--end of navigation-->
 
-         <!-- Add Sched -->   
-
-		 
+         <!-- Add Sched -->   	 
 		 <table class ="tablebutton"width="600" border="0" cellpadding"1" cellspacing="1">
 <tr>
 <td> 
@@ -89,8 +80,6 @@
 </td>
 </tr>
 </table>
-
-
 <div id="add-sched" class="modal">
     <div class="modal-content">
     <span class="close">&times;</span>
@@ -135,7 +124,7 @@
     <div class="modal-content">
     <span class="close2">&times;</span>
 
-          <?php
+    <?php
     $hostname = "localhost";
     $username = "root";
     $password = "";
@@ -143,11 +132,6 @@
     $connect = mysqli_connect($hostname, $username, $password, $databaseName);
     $query = "SELECT * FROM `events`";
     $result = mysqli_query($connect, $query);
-
-
-
-
-
     ?>  
      <form action="includes/delete.php" method="post">
           <select name="deletedata">
@@ -178,18 +162,6 @@
 
 
     <script src="css/addsched.js" ></script>
-
-
-
-
-
-
-
-
-
-
-
-
          <!--footer-->  
         <div id="footer">
             <p>Copyright &copy; Saint Louis University 2018 All Rights Reserved.</p>
