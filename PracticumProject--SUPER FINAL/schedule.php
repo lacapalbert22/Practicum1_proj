@@ -3,40 +3,50 @@
  include 'includes/dbh.inc.php';
 ?>
 <html lang="en">
+
     <head>
         <meta charset="utf-8">
         <title>SCHEDULE</title>
         <link rel="icon" href="images/slulogo.png">
-       
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-         <link rel="stylesheet" type="text/css" href="css/style.css" title="main">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" type="text/css" href="css/style.css" title="main">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+
+
     <body>
+
+
         <table class ="db" width="600" border="1" cellpadding"1" cellspacing="1">
-        <th>Company Name</th>
-        <th>Company Description</th>
-        <th>Available Slots</th> 
+        <th>Event Title</th>
+        <th>Event Description</th>
+        <th>Venue</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Available Slots</th>
         <?php
         $sql = "SELECT * FROM events";
         $result = mysqli_query($con,$sql);
         $resultCheck = mysqli_num_rows($result);
-    
+        $row = mysqli_fetch_array($result);
+        
         if ($resultCheck > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
 
            echo '<tr>';
            echo '<td>'.$row['event_name'].'</td>';
            echo '<td>'.$row['event_desc'].'</td>';
+           echo '<td>'.$row['event_venue'].'</td>';
+           echo '<td>'.$row['time1'].'';
+           echo '-'.$row['time2'].'</td>';
+           echo '<td>'.$row['event_date'].'</td>';
            echo '<td>'.$row['available_slot'].'</td>';
-           echo '<td><a href="edit.php"</td>';
-           echo '</tr>';
-               
+           echo '</tr>'; 
+           echo '<tr>'."<td><a href='includes/edit.php?edit=$row[id]'>edit</a></td> <td><a href='includes/viewschedule.php?view=$row[id]'>View Schedule</a> ".'</tr>';       
        }
     }
         ?>  
-    </table>
+        </table>
 
         <!--header_window-->
         <div class="header-container">
@@ -49,78 +59,125 @@
         <!--navigation-->
         <div class="nav-container">
             <ul>
-                <li>
-                    <a href="home.php"><i class="fa fa-home"></i>HOME</a>
-                </li>
-
-                <li>
-                    <a href="company.html"><i class="fa fa-building"></i>COMPANY</a>
-                </li>
-
-                <li class="selected">
-                    <a href="schedule.php"><i class="fa fa-calendar"></i>SCHEDULE</a>
-                </li>
+             <li>
+                <a href="home.php"><i class="fa fa-home"></i>HOME</a>
+             </li>
+             <li>
+                <a href="company.html"><i class="fa fa-building"></i>COMPANY</a>
+             </li>
+                 <li class="selected">
+                <a href="schedule.php"><i class="fa fa-calendar"></i>SCHEDULE</a>
+             </li>
             </ul>
         </div>
         <!--end of navigation-->
 
-         <!-- Add Sched -->   	 
+         <!-- Add Sched -->   
+
+		 
 		 <table class ="tablebutton"width="600" border="0" cellpadding"1" cellspacing="1">
-<tr>
-<td> 
-<!--<form action="addschedule.php"> -->  
-<button id="addsched">Add Schedule</button>
-<!--</form>-->
-</td>
-<td>
-<button id="viewsched">View Schedule</button>
-</td>
-<td>
-<button id="delsched">Delete Schedule</button>
-</td>
-</tr>
-</table>
-<div id="add-sched" class="modal">
+        <tr>
+        <td>   
+            <button id="addsched">Add Schedule</button>
+        </td>
+
+
+        <td>
+            <button id="viewsched">View Schedule</button>
+        </td>
+        <td>
+            <button id="delsched">Delete Schedule</button>
+        </td>
+        </tr>
+        </table>
+    <!--
+    <div id="edit-sched" class="modal3">
+    <div class="modal-content">
+    <span class="close3">&times;</span>
+    
+    <form method="POST" action="includes/edit.php">
+        <php?
+        include_once('dbh.inc.php');
+ 
+        if( isset($_GET['edit']) )
+        {
+        $id = $_GET['edit'];
+        $res= mysql_query("SELECT * FROM events WHERE id='$id'");
+        $row= mysql_fetch_array($res);
+        }
+        ?>
+   
+        <input type="text" name="companyname" value="<php? echo $row[1]; ?>">
+        <br>
+        <input type="text" name="companydesc" value="">
+        <br>
+        <input type="text" name="availableslot" value="">
+        <br>
+        <button type="submit" name="submit">Save Changes</button>
+    </form>
+
+    </div>  
+    </div>
+   -->
+
+    <div id="add-sched" class="modal">
     <div class="modal-content">
     <span class="close">&times;</span>
-     <form method="POST" action="includes/submit.inc.php">
-        <input type="text" name="companyname" placeholder="CompanyName">
+        <form method="POST" action="includes/add.php">
+        <input type="text" name="companyname" placeholder="Event Name" required>
         <br>
-        <input type="text" name="companydesc" placeholder="CompanyDescription">
+        <input type="text" name="companydesc" placeholder="Event Description" required>
         <br>
-        <input type="text" name="availableslot" placeholder="availableslots">
+        <input type="text" name="venue" placeholder="Venue" required>
+        <br>
+        <input type="time" name="time1" placeholder="Time" required> -
+    
+        <input type="time" name="time2" placeholder="Time" required min="7:00 AM" max="4:00 PM">
+        <br>
+        <input type="date" name="date" placeholder="Date" required>
+        <br>
+        <input type="text" name="availableslot" placeholder="Available Slots" required>
         <br>
 
-        <button type="submit" name="submit">Add</button>
+
+        <button type="submit" name="Submit">Add</button> 
+        <button type="submit" name="Cancel">Cancel</button> 
+
     </form>
-</div>
-</div>
+    </div>
+    </div>
 
 
-<div id="view-sched" class="modal1">
+    <div id="view-sched" class="modal1">
     <div class="modal-content">
     <span class="close1">&times;</span>
+    Lorem ipsum dolor sit amet, dicit vivendo disputationi ne his. Nam cu appareat prodesset mediocritatem, nec ei consul noster. Nulla erroribus sed ne. Et vim error clita, ea ignota semper eirmod nam, ex vel moderatius reprimique constituam.
+    Lorem ipsum dolor sit amet, dicit vivendo disputationi ne his. Nam cu appareat prodesset mediocritatem, nec ei consul noster. Nulla erroribus sed ne. Et vim error clita, ea ignota semper eirmod nam, ex vel moderatius reprimique constituam.
+    Lorem ipsum dolor sit amet, dicit vivendo disputationi ne his. Nam cu appareat prodesset mediocritatem, nec ei consul noster. Nulla erroribus sed ne. Et vim error clita, ea ignota semper eirmod nam, ex vel moderatius reprimique constituam.
+    Lorem ipsum dolor sit amet, dicit vivendo disputationi ne his. Nam cu appareat prodesset mediocritatem, nec ei consul noster. Nulla erroribus sed ne. Et vim error clita, ea ignota semper eirmod nam, ex vel moderatius reprimique constituam.
+    Lorem ipsum dolor sit amet, dicit vivendo disputationi ne his. Nam cu appareat prodesset mediocritatem, nec ei consul noster. Nulla erroribus sed ne. Et vim error clita, ea ignota semper eirmod nam, ex vel moderatius reprimique constituam.
 
     <button id="viewpar">View Participants</button>
-</div>
-</div>
+    </div>
+    </div>
 
     <div id="view-par" class="modalpar1">
     <div class="modal-content">
     <span class="closepar1">&times;</span>
+    <p> Lorem ipsum dolor sit amet, dicit vivendo disputationi ne his. Nam cu appareat prodesset mediocritatem, nec ei consul noster. Nulla erroribus sed ne. Et vim error clita, ea ignota semper eirmod nam, ex vel moderatius reprimique constituam.</p>
 
     </div>
     </div>
 
-<div id="view-sched" class="modal1">
+    <div id="view-sched" class="modal1">
     <div class="modal-content">
     <span class="close1">&times;</span>
 
     <button id="viewpar">View Participants</button>
-</div>
-</div>
+    </div>
+    </div>
 
-<div id="del-sched" class="modal2">
+    <div id="del-sched" class="modal2">
     <div class="modal-content">
     <span class="close2">&times;</span>
 
@@ -146,26 +203,19 @@
 
           <input type="submit" name="delete" value="Clear Data">
      </form>
-</div>
-</div>
+    </div>
+    </div>
   
 
 
-
-    
-
-
-
-
-
-
-
-
     <script src="css/addsched.js" ></script>
+
+
+
          <!--footer-->  
-        <div id="footer">
+    <div id="footer">
             <p>Copyright &copy; Saint Louis University 2018 All Rights Reserved.</p>
-        </div>
+    </div>
         <!--end of footer-->
      
     </body>

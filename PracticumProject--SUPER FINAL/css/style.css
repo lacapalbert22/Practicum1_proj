@@ -116,7 +116,7 @@ body{
     font-family: 'Montserrat', sans-serif;
 
 }
-.modal,.modal1,.modal2,.modalpar1 {
+.modal,.modal1,.modal2,.modal3,.modalpar1 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -142,7 +142,7 @@ body{
 }
 
 /* The Close Button */
-.close,.close1,.close2,.closepar1{
+.close,.close1,.close2,.close3,.closepar1{
     color: #aaaaaa;
     float: right;
     font-size: 28px;
@@ -165,17 +165,17 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
-}
 .close2:hover,.close2:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
-
-
-
-
+.close3:hover,.close3:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
  
 .db{
     position: absolute;
@@ -190,17 +190,10 @@ body{
     top: 200px;
     right: 0px;
     margin:10px;
-   
-
 }
 .tdpow{
 	bottom:100px;
 }
-
-
-
-
-
 .addschedfunc{
 	position: absolute;
 	left: 500px;
@@ -208,6 +201,37 @@ body{
     right: 0px; 
 
 }
+
+.editthis{
+	position: absolute;
+	left: 500px;
+    top: 200px;
+    right: 0px; 
+}
+
+
+input[type=time]::-webkit-clear-button {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   margin: 0; 
+ }
+
+::-webkit-datetime-edit-second-field {
+	-webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   margin: 0; 
+ 
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+   appearance: none;
+   margin: 0; 
+  }
 
 
 
