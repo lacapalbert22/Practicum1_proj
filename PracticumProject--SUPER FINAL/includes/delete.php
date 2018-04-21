@@ -1,7 +1,5 @@
 <?php
 
-// php code to Delete data from mysql database 
-
     if(isset($_POST['delete']))
     {
     $hostname = "localhost";
@@ -9,7 +7,6 @@
     $password = "";
     $databaseName = "sample";
     
-    // get id to delete
     $id = $_POST['deletedata'];
     
     // connect to mysql

@@ -116,7 +116,7 @@ body{
     font-family: 'Montserrat', sans-serif;
 
 }
-.modal,.modal1,.modal2,.modal3,.modalpar1 {
+.modal,.modal1,.modal2,.modal3,.modal4{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -142,7 +142,7 @@ body{
 }
 
 /* The Close Button */
-.close,.close1,.close2,.close3,.closepar1{
+.close,.close1,.close2,.close3,.close4{
     color: #aaaaaa;
     float: right;
     font-size: 28px;
@@ -159,24 +159,22 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
-
-.closepar1:hover,.closepar1:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
 .close2:hover,.close2:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
-
 .close3:hover,.close3:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
- 
+.close4:hover,.close4:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .db{
     position: absolute;
     left: 500px;
@@ -191,6 +189,25 @@ body{
     right: 0px;
     margin:10px;
 }
+
+.parlink{
+    position: absolute;
+    left: 500px;
+    top:500px;
+    right: 0px;
+    margin:10px;
+
+}
+
+
+.eventcontent{
+  position: absolute;
+    left: 500px;
+    top: 200px;
+    right: 0px;
+    margin:10px;
+}
+
 .tdpow{
 	bottom:100px;
 }
@@ -201,15 +218,12 @@ body{
     right: 0px; 
 
 }
-
-.editthis{
+.editthis,.editsched{
 	position: absolute;
 	left: 500px;
-    top: 200px;
-    right: 0px; 
+  top: 400px;
+  right: 0px; 
 }
-
-
 input[type=time]::-webkit-clear-button {
    -webkit-appearance: none;
    -moz-appearance: none;
@@ -232,6 +246,8 @@ input[type=time]::-webkit-clear-button {
    appearance: none;
    margin: 0; 
   }
+
+
 
 
 

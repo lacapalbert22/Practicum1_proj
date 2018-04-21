@@ -10,31 +10,6 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 
-var modal1 = document.getElementById('view-sched');
-var btn1 = document.getElementById("viewsched");
-var span1= document.getElementsByClassName("close1")[0];
-
-
-btn1.onclick = function() {
-   modal1.style.display = "block";
-}
-span1.onclick = function() {
-    modal1.style.display = "none";
-}
-
-var modalpar1 = document.getElementById('view-par');
-var btnpar1 = document.getElementById("viewpar");
-var spanpar1= document.getElementsByClassName("closepar1")[0];
-
-
-btnpar1.onclick = function() {
-   modalpar1.style.display = "block";
-}
-spanpar1.onclick = function() {
-    modalpar1.style.display = "none";
-}
-
-
 var modal2 = document.getElementById('del-sched');
 var btn2 = document.getElementById("delsched");
 var span2= document.getElementsByClassName("close2")[0];
@@ -47,8 +22,8 @@ span2.onclick = function() {
     modal2.style.display = "none";
 }
 
-var modal3 = document.getElementById('edit-sched');
-var btn3 = document.getElementByClass("editsched");
+var modal3 = document.getElementById('add-par');
+var btn3 = document.getElementById("addpar");
 var span3= document.getElementsByClassName("close3")[0];
 
 
@@ -57,7 +32,25 @@ btn3.onclick = function() {
 }
 span3.onclick = function() {
     modal3.style.display = "none";
+
 }
+
+
+var modal4 = document.getElementById('del-sched-par');
+var btn4 = document.getElementById("delschedpar");
+var span4= document.getElementsByClassName("close4")[0];
+
+
+btn4.onclick = function() {
+   modal4.style.display = "block";
+}
+span4.onclick = function() {
+    modal4.style.display = "none";
+}
+
+
+
+
 
 
 
