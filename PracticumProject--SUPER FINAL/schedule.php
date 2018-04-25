@@ -16,7 +16,7 @@
 
     <body>
         
-        <table class ="db" width="600" border="1" cellpadding="1" cellspacing="1">
+        <table class ="db" width="1000" border="1" cellpadding="1" cellspacing="1">
 
         <th>Event Title</th>
         <th>Event Description</th>
@@ -48,34 +48,32 @@
            
 
      
-       }
-    }
-
-   
-
-   
+          }
+          }
         ?>  
-
         </table>
       
 
         
-        
-    
-
-
-
-
        
         <!--header_window-->
+        
+
+
         <div class="header-container">
             <img class="scislogo" src="images/slulogo.png">
             <div id="title-page">SLU iRecruit</div>
             <div id="logout-btn">Logout</div>
         </div>
+        
+
+
         <!--end of header_window-->
 
         <!--navigation-->
+        
+
+
         <div class="nav-container">
             <ul>
              <li>
@@ -91,18 +89,19 @@
         </div>
         <!--end of navigation-->
 
-         <!-- Add Sched -->   
+         <!-- Add Sched and Delete Schedule -->   
+	      
 
-		 
-	<table class ="tablebutton" width="600" border="0">
-    <tr><td><button id="addsched">Add Schedule</button></td>
-    <td><button id="delsched">Delete Schedule</button></td></tr>
-    </table>
+
+         <table class ="tablebutton" width="600" border="0">
+         <tr><td><button id="addsched">Add Schedule</button></td>
+         <td><button id="delsched">Delete Schedule</button></td></tr>
+         </table>
 
   
-    <div id="add-sched" class="modal">
-    <div class="modal-content">
-    <span class="close">&times;</span>
+        <div id="add-sched" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
         <form method="POST" action="includes/add.php" autocomplete="off">
         <table border="0" border="1" cellpadding"1" cellspacing="1">
         <tr><td>Event Name:</td>
@@ -119,43 +118,42 @@
         <button type="submit" name="Submit">Add</button> 
         <button type="submit" name="Cancel" formaction="schedule.php">Cancel</button> 
 
-    </form>
-    </div>
-    </div>
+        </form>
+        </div>
+        </div>
 
 
 
-    <div id="del-sched" class="modal2">
-    <div class="modal-content">
-    <span class="close2">&times;</span>
+        <div id="del-sched" class="modal2">
+        <div class="modal-content">
+        <span class="close2">&times;</span>
 
-    <?php
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $databaseName = "sample";
-    $connect = mysqli_connect($hostname, $username, $password, $databaseName);
-    $query = "SELECT * FROM `events`";
-    $result = mysqli_query($connect, $query);
-    ?>  
+        <?php
+        $hostname = "localhost";
+        $username = "root";
+        $password = "";
+        $databaseName = "sample";
+        $connect = mysqli_connect($hostname, $username, $password, $databaseName);
+        $query = "SELECT * FROM `events`";
+        $result = mysqli_query($connect, $query);
+        ?>  
      
-     <form action="includes/delete.php" method="post">
-          <select name="deletedata">
+        <form action="includes/delete.php" method="post">
+        <select name="deletedata">
 
-            <?php while($row1 = mysqli_fetch_array($result)):;?>
+        <?php while($row1 = mysqli_fetch_array($result)):;?>
             
-            <option value="<?php echo $row1[0];?>"><?php echo $row1[1];?></option>
+        <option value="<?php echo $row1[0];?>"><?php echo $row1[1];?></option>
             
-            <?php endwhile;?>
-
-            </select>
+        <?php endwhile;?>
+        </select>
         <input type="submit" name="delete" value="Clear Data">
-     </form>
-    </div>
-    </div>
+        </form>
+        </div>
+        </div>
 
 
-    <script src="css/buttons.js" async></script>
+        <script src="css/buttons.js" async></script>
 
 
          <!--footer-->  

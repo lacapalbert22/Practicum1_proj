@@ -99,25 +99,79 @@ body{
 
 /**Schedule page**/
 
-
+/*buttons*/
 .tablebutton{
     position:absolute;
     right:0;
     left:600px;
-    top:700px;
+    top:600px;
     bottom:0;
     margin:0;
     border:0;
 }
-
 .tablebutton button{
-    font-size: 1vw;
-    margin-right: 17px;
-    padding-right: 10px;
-    padding-left: 10px;
+    background-color: ; /* Green */
+    color: #000040;
+    border:none;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
 }
+.tablebutton #addsched:hover{
+   background-color: #0f408e;
+   color: white;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: bold;
+ }
+.tablebutton #delsched:hover{
+   background-color: red;
+   color: white;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: bold;
+}
 
+.db td a {
+   background-color: ; /* Green */
+    color: #000040;
+    border:none;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.db td a:hover {
+   background-color: #0f408e;
+   color: white;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: bold;
+   padding:10px 40px;
+}
+
+
+
+
+
+/* end of Schedule *
+
+
+/*modal effect*/
 
 
 .modal,.modal1,.modal2,.modal3,.modal4{
@@ -219,8 +273,8 @@ body{
 	bottom:100px;
 }
 .addschedfunc{
-	position: absolute;
-	left: 500px;
+	  position: absolute;
+	  left: 500px;
     top: 200px;
     right: 0px; 
 
@@ -231,6 +285,9 @@ body{
   top: 400px;
   right: 0px; 
 }
+
+
+/* Necessary stuff */
 input[type=time]::-webkit-clear-button {
    -webkit-appearance: none;
    -moz-appearance: none;
