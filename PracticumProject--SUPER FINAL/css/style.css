@@ -98,6 +98,8 @@ body{
 /*end of navigation*/
 
 /**Schedule page**/
+
+
 .tablebutton{
     position:absolute;
     right:0;
@@ -114,8 +116,10 @@ body{
     padding-right: 10px;
     padding-left: 10px;
     font-family: 'Montserrat', sans-serif;
-
 }
+
+
+
 .modal,.modal1,.modal2,.modal3,.modal4{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -176,18 +180,21 @@ body{
 }
 
 .db{
-    position: absolute;
     left: 500px;
-    top: 200px;
-    right: 0px;    
+    top: 100px;
+    right: 0px; 
+    table-layout: fixed;
+    position: absolute;   
   }
 
 .eventhome{
 	position: absolute;
     left: 500px;
-    top: 200px;
-    right: 0px;
-    margin:10px;
+    top: 100px;
+    height: 100px;
+    width: 600px;
+
+
 }
 
 .parlink{
@@ -246,31 +253,6 @@ input[type=time]::-webkit-clear-button {
    appearance: none;
    margin: 0; 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*footer*/
 #footer{

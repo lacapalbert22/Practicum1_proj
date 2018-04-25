@@ -97,7 +97,7 @@
   
 
 
-    <script src="css/addsched.js" ></script>
+    <script src="css/buttons.js" ></script>
 
 
 

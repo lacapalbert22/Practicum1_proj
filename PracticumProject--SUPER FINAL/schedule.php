@@ -9,22 +9,21 @@
         <title>SCHEDULE</title>
         <link rel="icon" href="images/slulogo.png">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css" title="main">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
 
     <body>
+        
+        <table class ="db" width="600" border="1" cellpadding="1" cellspacing="1">
 
-
-        <table class ="db" width="600" border="1" cellpadding"1" cellspacing="1">
         <th>Event Title</th>
         <th>Event Description</th>
         <th>Venue</th>
         <th>Time</th>
         <th>Date</th>
-        <th>Available Slots</th>
-        
+        <th>Available Slots</th>        
         <?php
         
         $sql = "SELECT * FROM events";
@@ -46,6 +45,7 @@
            echo '</tr>'; 
            echo "<tr><td><a href='includes/edit.php?edit=$row[id]'>Edit</a></td>";
            echo "<td><a href='includes/viewschedule.php?view=$row[id]'>View Schedule</a></td></tr>";
+           
 
      
        }
@@ -56,10 +56,17 @@
    
         ?>  
 
-        
-       
         </table>
+      
 
+        
+        
+    
+
+
+
+
+       
         <!--header_window-->
         <div class="header-container">
             <img class="scislogo" src="images/slulogo.png">
@@ -148,7 +155,7 @@
     </div>
 
 
-    <script src="css/addsched.js" async></script>
+    <script src="css/buttons.js" async></script>
 
 
          <!--footer-->  

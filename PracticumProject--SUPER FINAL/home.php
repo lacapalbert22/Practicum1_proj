@@ -44,7 +44,7 @@
 
 
       
-        <table class ="eventhome" width="600" border="1" cellpadding="100" cellspacing="2">
+        <table class ="eventhome" width="600" border="0" cellpadding="100" cellspacing="2">
         <th class="titlehomepage" align="left">Upcoming Events</th>
    
    
