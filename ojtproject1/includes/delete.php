@@ -1,20 +1,17 @@
 <?php
+    include_once('dbh.inc.php');
 
-    if(isset($_POST['delete']))
-    {
+    
     $hostname = "localhost";
     $username = "root";
     $password = "";
     $databaseName = "sample";
-    
-    $id = $_POST['deletedata'];
+    $id = $_GET['delete'];
     
     // connect to mysql
     $connect = mysqli_connect($hostname, $username, $password, $databaseName);
-    
     // mysql delete query 
     $query = "DELETE FROM `events` WHERE `id` = $id";
-    
     $result = mysqli_query($connect, $query);
     /**
     if($result)
@@ -25,11 +22,9 @@
     }
     **/
     mysqli_close($connect); 
-    }
     
 
-
-   header("Refresh:0; url=../schedule.php")
+   header("Refresh:10; url=../schedule.php")
 ?>
 
 

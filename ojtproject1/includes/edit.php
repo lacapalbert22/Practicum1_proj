@@ -12,19 +12,19 @@
 
 
    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="icon" href="images/slulogo.png">
+    <link rel="icon" href="../images/slulogo.png">
 </head>
 <body>
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.html">iSLU</a>
+      <a class="navbar-brand" href="../home.php">iSLU</a>
     </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="home.php"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="company.php"><i class="fa fa-building"></i>Company</a></li>
-        <li><a href="schedule.php"><i class="fa fa-calendar"></i>Schedule</a></li>
+        <li><a href="../home.php"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="../company.php"><i class="fa fa-building"></i> Company</a></li>
+        <li><a href="../schedule.php"><i class="fa fa-calendar"></i> Schedule</a></li>
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -37,6 +37,14 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="container">
+<a href="../schedule.php" class="btn btn-default">Back</a>
+<hr>
+</div>
+
+
+  <div class="container">
 
   <?php
   include_once('dbh.inc.php');
@@ -73,23 +81,32 @@
   
   <input type="hidden" name="id" value="<?php echo $row[0]; ?>">
   
-  Event Name: <input class="form-control" type="text" name="newName" value="<?php echo $row[1];?>"><br/>
+  Event Name: <input class="form-control" type="text" name="newName" value="<?php echo $row[1];?>"><br>
   
-  Event Description: <input class="form-control"type="text" name="newDesc" value="<?php echo $row[2];?>"><br/>
+  Event Description: <input class="form-control"type="text" name="newDesc" value="<?php echo $row[2];?>"><br>
   
-  Venue: <input class="form-control" type="text" name="newVenue" value="<?php echo $row[3];?>"><br/>
+  Venue: <input class="form-control" type="text" name="newVenue" value="<?php echo $row[3];?>"><br>
+  
+  
+  Time:<br> 
   <div class="row">
-  <div class="col">
-    Time: <input class="form-control" type="time" name="newTime1" value="<?php echo $row[4];?>">
-  </div> - <div class="col"><input class="form-control" type="time" name="newTime2" value="<?php echo $row[6];?>">
-  </div>
-  </div>
-  Date:<input class="form-control" type="Date" name="newDate" value="<?php echo $row[7];?>"><br/>
+  <div class="col-lg-4"> 
+  <input class="form-control" type="time" name="newTime1" value="<?php echo $row[4];?>"> 
+  </div> 
+  <div class="col-lg-4">
+  <input class="form-control" type="time" name="newTime2" value="<?php echo $row[6];?>">
+  </div><br>
+  </div><br>
+ 
+  Date:<input class="form-control" type="Date" name="newDate" value="<?php echo $row[7];?>"><br>
   
-  Available Slots: <input class="form-control" type="text" name="newSlots" value="<?php echo $row[5];?>"><br/>
-  <input type="submit" value="Save"/>
-  <input type="submit" formaction="../schedule.php" value="Cancel"/>
+  Available Slots: <input class="form-control" type="text" name="newSlots" value="<?php echo $row[5];?>"><br>
+  <input class="btn btn-primary" type="submit" value="Save"/>
+  <input class="btn btn-primary" type="submit" formaction="../schedule.php" value="Cancel"/>
   </form>
+
+
+</div>
 
 </body>
 </html>

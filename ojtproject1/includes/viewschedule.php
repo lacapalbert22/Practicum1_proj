@@ -21,13 +21,14 @@
       <a class="navbar-brand" href="../home.php">iSLU</a>
     </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="home.php"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="company.php"><i class="fa fa-building"></i>Company</a></li>
-        <li><a href="schedule.php"><i class="fa fa-calendar"></i>Schedule</a></li>
+        <li><a href="../home.php"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="../company.php"><i class="fa fa-building"></i> Company</a></li>
+        <li><a href="../schedule.php"><i class="fa fa-calendar"></i> Schedule</a></li>
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="settings.php">Settings</a></li>
+            <li><a href="settings.php">Profile</a></li>
+            <li><a href="#">Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -41,9 +42,7 @@
   <h1>View Schedule</h1>
   <hr>
 </div>
-
-<div class="container">
-       <?php
+ <?php
         if( isset($_GET['view']) )
         {
         $con = mysqli_connect('localhost', 'root', '', 'sample');
@@ -52,14 +51,26 @@
         $res = mysqli_query($con,$sql);
         $row= mysqli_fetch_array($res);
 
+        ?>
 
-           echo '<p>Event Name:'.$row['event_name'].'</p><br>';
-           echo '<p>Event Description:'.$row['event_desc'].'</p><br>';
-           echo '<p>Event Venue:'.$row['event_venue'].'</p><br>';
-           echo '<p>Event Time:'.$row['time1'].'-';
-           echo  $row['time2'].'</p><br>';
-           echo '<p>Date:'.$row['event_date'].'</p><br>';
-           echo '<p>Slots Available:'.$row['available_slot'].'</p><br>';
+<div class="container">
+<a href="../schedule.php" class="btn btn-default">Back</a>
+<hr>
+</div>
+
+<div class="container">
+      
+
+        <?php
+           echo "<ul class='list-group'>"; 
+           echo "<li class='list-group-item'><strong>Event Name:</strong></td><td> ".$row['event_name'].'</li>';
+           echo "<li class='list-group-item'><strong>Event Description:</strong> ".$row['event_desc'].'</li>';
+           echo "<li class='list-group-item'><strong>Event Venue:</strong></td><td> ".$row['event_venue'].'</li>';
+           echo "<li class='list-group-item'><strong>Event Time:</strong><td> ".$row['time1'].'-';
+           echo  $row['time2'].'</li>';
+           echo "<li class='list-group-item'><strong>Event Time:</strong> ".$row['event_date'].'</li>';
+           echo "<li class='list-group-item'><strong>Slots Available:</strong></td><td>".$row['available_slot'].'</li>';
+           echo '</ul>';
 
        }
         
@@ -89,7 +100,7 @@
          ?>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Add Parcipants
+  Add Participants
 </button>
 </div>
 
@@ -105,13 +116,13 @@
       </div>
       <div class="modal-body">
         <form method='POST' action='addpar.php?addpar=<?php echo $id ?>' autocomplete='off'>
-        Last name:<br><input type="text" name="parlastname"  required><br>   
-        First Name:<br><input type="text" name="parfirstname" required><br>
-        Middle Initial:<br> <input type="text" name="parmi"  required><br>
-        Email:<br><input type="text" name="paremail"><br>
-        Contact:<br> <input type="text" name="parcontact" required><br><hr>       
+        Last name:<br><input class="form-control" type="text" name="parlastname"  required><br>   
+        First Name:<br><input class="form-control"  type="text" name="parfirstname" required><br>
+        Middle Initial:<br> <input class="form-control"  type="text" name="parmi"  required><br>
+        Email:<br><input class="form-control"  type="text" name="paremail"><br>
+        Contact:<br> <input class="form-control"  type="text" name="parcontact" required><br><hr>       
         <button class="btn btn-primary" type="submit" name="Submit">Add</button> 
-        <button class="btn btn-primary" type="submit" name="Cancel" formaction="schedule.php">Cancel</button> 
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
          </form>
 

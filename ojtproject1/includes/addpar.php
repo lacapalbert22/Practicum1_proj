@@ -29,6 +29,6 @@
 	/**
 	header("Location: ../schedule.php?=signupsuccess");
 	**/
-	header("Refresh:10; url=../includes/viewpar.php?viewpar=$id");
+	header("Refresh:0; url=../includes/viewpar.php?viewpar=$id");
 }
 ?>
