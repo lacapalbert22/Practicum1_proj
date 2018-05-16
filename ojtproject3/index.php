@@ -16,7 +16,7 @@
             header("Location: home.php");
             exit();
         }else{
-            header("Location: login.php");
+            header("Location: index.php");
         } 
     }
 ?>

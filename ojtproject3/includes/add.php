@@ -10,6 +10,7 @@
 	{
 		echo '';
 	}
+	$company = $_POST['company'];
 	$name = $_POST['companyname'];
 	$desc = $_POST['companydesc'];
 	$venue = $_POST['venue'];
@@ -18,7 +19,7 @@
 	$date = $_POST['date'];
 	$slot = $_POST['availableslot'];
 	
-	$sql = "INSERT INTO events (event_name, event_desc, event_venue, time1, time2, event_date, available_slot) VALUES ('$name', '$desc', '$venue', '$time1', '$time2', '$date','$slot')";
+	$sql = "INSERT INTO events (event_name, event_desc, event_venue, time1, time2, event_date, available_slot, company_fk) VALUES ('$name', '$desc', '$venue', '$time1', '$time2', '$date','$slot','$company')";
 	mysqli_query($con,$sql);
 	/**
 	header("Location: ../schedule.php?=signupsuccess");

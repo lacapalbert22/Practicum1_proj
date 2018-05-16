@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
  include 'includes/dbh.inc.php';
+ require 'includes/checklogin.php';
 ?>
 <html>
 <head>
@@ -27,8 +28,8 @@
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> User<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="profile.php"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -63,6 +64,30 @@
       </div>
       <div class="modal-body">
           <form method="POST" action="includes/add.php" autocomplete="off">
+      
+
+        Company:<br>
+        <div class="form-group">
+         <select class="form-control" name="company">
+      <?php
+
+             $sql = "select * from company ";
+            $result = mysqli_query($con,$sql);
+            $resultCheck = mysqli_num_rows($result);
+        /*$row = mysqli_fetch_array($result);*/
+        
+            if ($resultCheck > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+            extract($row);
+
+              echo '<option value="'.$row['company_id'].'">'.$row['company_name'].'</option>';
+
+                }
+              }
+            ?>
+          </select>
+          </div>
+
         Event Name:<br>
         <input class="form-control" type="text" name="companyname"  placeholder="Name" required><br>
         
@@ -103,7 +128,7 @@
 <div class="jumbotron">
         <?php
         
-        $sql = "SELECT * FROM events";
+        $sql = "select * , company_logo from events inner join company on events.company_fk=company.company_id order by event_date DESC";
         $result = mysqli_query($con,$sql);
         $resultCheck = mysqli_num_rows($result);
         /*$row = mysqli_fetch_array($result);*/
@@ -112,6 +137,11 @@
         while ($row = mysqli_fetch_assoc($result)) {
            extract($row);
 
+
+        echo '<div class="card">';
+        echo '<card class="body">';
+        echo'<img src="images/company/'.$row['company_logo'].'" alt="" style="max-height: 100px; max-width: 300px;min-height: 100px; min-width: 300px;">';
+           echo  '</card></div>';
            echo 'Event Name:'.$row['event_name'].'<br>';
            echo 'Event Description:'.$row['event_desc'].'<br>';
            echo 'Venue:'.$row['event_venue'].'<br>';
