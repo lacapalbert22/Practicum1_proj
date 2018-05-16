@@ -28,8 +28,8 @@
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> User<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="./profile.php"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
+            <li><a href="./logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -50,7 +50,7 @@
         $row = mysqli_fetch_assoc($result); 
 
         echo "<div class='container'>";
-        echo "<a href='viewschedule.php?view=$row[event_fk]' class='btn btn-default'>Back</a>";
+        echo "<a href='viewschedule.php?view=$id' class='btn btn-default'><span class='glyphicon glyphicon-arrow-left'></span> Back</a>";
         echo "<hr>";
         echo "</div>";
 

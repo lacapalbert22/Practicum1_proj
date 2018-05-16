@@ -28,8 +28,8 @@
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> User<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
-            <li><a href="settings.php"></span><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="profile.php"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
+            <li><a href="logout.php"></span><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </li>
       </ul>

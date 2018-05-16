@@ -27,8 +27,8 @@
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> User<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="./profile.php"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
+            <li><a href="./logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -47,7 +47,7 @@
         {
         $con = mysqli_connect('localhost', 'root', '', 'sample');
         $id = $_GET['view'];
-        $sql = "SELECT * FROM events WHERE id='$id'";
+        $sql = "SELECT *,count(participants.par_id) as 'slots taken', ((`available_slot`)-(count(participants.par_id)))as 'slots avaiable' FROM `events` inner join participants on events.id = participants.event_fk WHERE id='$id'";
         $res = mysqli_query($con,$sql);
         $row= mysqli_fetch_array($res);
 
@@ -69,7 +69,8 @@
            echo "<li class='list-group-item'><strong>Event Time:</strong><td> ".$row['time1'].'-';
            echo  $row['time2'].'</li>';
            echo "<li class='list-group-item'><strong>Event Time:</strong> ".$row['event_date'].'</li>';
-           echo "<li class='list-group-item'><strong>Slots Available:</strong></td><td>".$row['available_slot'].'</li>';
+           echo "<li class='list-group-item'><strong>Total Slots:</strong></td><td>".$row['available_slot'].'</li>';
+           echo "<li class='list-group-item'><strong>Slots Available:</strong></td><td>".$row['slots avaiable'].'</li>';
            echo '</ul>';
 
        }
@@ -86,7 +87,7 @@
         {
         $con = mysqli_connect('localhost', 'root', '', 'sample');
         $id = $_GET['view'];
-        $sql = "SELECT * FROM events WHERE id='$id'";
+        $sql = "SELECT * from events WHERE id='$id'";
         $res = mysqli_query($con,$sql);
         $row= mysqli_fetch_array($res);
         
@@ -119,7 +120,7 @@
         Last name:<br><input class="form-control" type="text" name="parlastname"  required><br>   
         First Name:<br><input class="form-control"  type="text" name="parfirstname" required><br>
         Middle Initial:<br> <input class="form-control"  type="text" name="parmi"  required><br>
-        Email:<br><input class="form-control"  type="text" name="paremail"><br>
+        Email:<br><input class="form-control"  type="email" name="paremail"><br>
         Contact:<br> <input class="form-control"  type="text" name="parcontact" required><br><hr>       
         <button class="btn btn-primary" type="submit" name="Submit">Add</button> 
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

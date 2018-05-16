@@ -148,7 +148,6 @@
            echo 'Time:'.$row['time1'];
            echo '-'.$row['time2'].'<br>';
            echo 'Date:'.$row['event_date'].'<br>';
-           echo 'Available Slot:'.$row['available_slot'].'<br>'; 
            echo "<a class='btn btn-primary' href='includes/edit.php?edit=$row[id]' ><span class='glyphicon glyphicon-edit'></span> Edit</a> ";
            echo "<a class='btn btn-primary' href='includes/viewschedule.php?view=$row[id]'><span class='glyphicon glyphicon-th-list'></span> View Schedule</a>";
           ?>

@@ -138,9 +138,14 @@
   </div>
 </nav>
 
-  <div class="container jumbotron text-center">
-  <h1 class="text-center">Company Profile</h1>
+  <div class="container jumbotron">
+  <h3 class="text-center"><b style="font-size: 30px;">Company Profile</b></h3>
+  <div class="float-left">
+  <a href='company.php' class='btn btn-default'><span class='glyphicon glyphicon-arrow-left'></span> Back</a>
+  </div>
   <hr>
+
+  
 
   <div class="container">
     <div class="row">

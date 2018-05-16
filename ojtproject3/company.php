@@ -88,6 +88,8 @@
   </div>
 </nav>
 
+
+
 <div class="container-fluid text-center">
 <h1>Add New Company</h1>
   
