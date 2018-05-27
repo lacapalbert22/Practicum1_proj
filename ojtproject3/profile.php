@@ -32,7 +32,7 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="home.php">iSLU</a>
+                <a class="navbar-brand" href="home.php">iRecruit</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="home.php"><i class="fa fa-home"></i>&nbspHome</a></li>

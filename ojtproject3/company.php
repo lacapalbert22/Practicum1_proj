@@ -51,6 +51,7 @@
 ?>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -65,20 +66,25 @@
   </style>
 </head>
 <body>
+  <style type="text/css">body{ font-family:'Tajawal'; font-size: 20px;}
+  li a{font-size:18px;} 
+   </style>
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home.php">iSLU</a>
+      <a href="home.php" class="navbar-left"><img src="images/slulogo.png" style="width:30px; float: left; padding-top: 10px;margin-right:5px;"></a>
+      <a class="navbar-brand" href="home.php">iRecruit</a>
     </div>
       <ul class="nav navbar-nav navbar-right">
+
         <li><a href="home.php"><i class="fa fa-home"></i>&nbspHome</a></li>
         <li><a href="company.php"><i class="fa fa-building"></i>&nbspCompany</a></li>
         <li><a href="schedule.php"><i class="fa fa-calendar"></i>&nbspSchedule</a></li>
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>&nbspUser<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="profile.php">Profile</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="profile.php"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -106,6 +112,7 @@
     <div class="col-md-6" >
       <div class="form-group">
         <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
           <input type="text" name="search_text" id="search_text" size="90" placeholder="Search" class="form-control" />
         </div>
       </div>
@@ -122,7 +129,7 @@
         else if(isset($successMSG)){
           ?>
             <div class="alert alert-success">
-                <strong><span class="glyphicon glyphicon-info-sign"></span> <?php echo $successMSG; ?></strong>
+                <strong><span class="glyphicon glpyphicon-info-sign"></span> <?hp echo $successMSG; ?></strong>
             </div>
           <?php
       }
@@ -176,8 +183,8 @@
           </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-md"  style="width:120px;" name="btnsave">Save</button>
-        <button type="button" class="btn btn-danger btn-md"  style="width:120px;" name="#" data-dismiss="modal" aria-label="Close">Cancel</button> 
+        <button type="submit" class="btn btn-primary btn-md"  style="width:120px;" name="btnsave"><i class="glyphicon glyphicon-save"></i> Save</button>
+        <button type="button" class="btn btn-danger btn-md"  style="width:120px;" name="#" data-dismiss="modal" aria-label="Close"><i class="glyphicon glyphicon-remove"></i> Cancel</button> 
         </form>
         
         

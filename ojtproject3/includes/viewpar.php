@@ -95,12 +95,14 @@
            echo '<td>'.$row['par_mi'].'</td>';
            echo '<td>'.$row['par_email'].'</td>';
            echo '<td>'.$row['par_contact'].'</td>';   
-           echo "<td><a class='btn btn-primary' href='editpar.php?editpar=$row[par_id]'>Edit</a>   ";
-           echo "<a class='btn btn-primary' href='deletepar.php?deletepar=$row[par_id]'>Delete</a></td>";
-           echo '</tr>'; 
+           echo "<td><a class='btn btn-primary' href='editpar.php?editpar=$row[par_id]'><i class='glyphicon glyphicon-edit'></i> Edit</a> ";
+           echo "<a class='btn btn-primary' href='deletepar.php?deletepar=$row[par_id]'><i class='glyphicon glyphicon-trash'></i> Delete</a>";
+           echo '</td></tr>'; 
+
+           ?>
 
 
-
+      <?php
         }
         }
         }

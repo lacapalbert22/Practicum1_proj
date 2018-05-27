@@ -266,8 +266,8 @@
           <label for="exampleInputPassword1">Mobile Number</label>
           <input class="form-control" type="text" name="mobile" placeholder="Mobile Number" required>
         </div>
-          <button type="submit" class="btn btn-primary btn-md"  style="width:120px;" name="btnsave">Save</button> 
-          <button type="button" class="btn btn-danger btn-md"  style="width:120px;" name="#" data-dismiss="modal" aria-label="Close">Cancel</button> 
+          <button type="submit" class="btn btn-primary btn-md"  style="width:120px;" name="btnsave"><i class="glyphicon glyphicon-save"></i> Save</button> 
+          <button type="button" class="btn btn-danger btn-md"  style="width:120px;" name="#" data-dismiss="modal" aria-label="Close"><i class="glyphicon glyphicon-remove"></i> Cancel</button> 
         </form>
 
         <hr>
@@ -328,8 +328,8 @@
           </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-md"  style="width:120px;" name="update_company">Save</button>
-        <button type="button" class="btn btn-danger btn-md"  style="width:120px;" name="#" data-dismiss="modal" aria-label="Close">Cancel</button> 
+        <button type="submit" class="btn btn-primary btn-md"  style="width:120px;" name="update_company"><i class="glyphicon glyphicon-save"></i> Save</button>
+        <button type="button" class="btn btn-danger btn-md"  style="width:120px;" name="#" data-dismiss="modal" aria-label="Close"><i class="glyphicon glyphicon-remove"></i> Cancel</button> 
         </form>
         <hr>
       </div>

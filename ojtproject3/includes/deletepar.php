@@ -26,7 +26,7 @@
     mysqli_close($connect); 
 
 
-   header("Refresh:5; url=../schedule.php")
+   header("Refresh:0; url=../schedule.php?id=$id")
 ?>
 
 
