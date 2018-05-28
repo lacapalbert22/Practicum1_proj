@@ -65,31 +65,58 @@
 
   </style>
 </head>
-<body>
-  <style type="text/css">body{ font-family:'Tajawal'; font-size: 20px;}
-  li a{font-size:18px;} 
-   </style>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a href="home.php" class="navbar-left"><img src="images/slulogo.png" style="width:30px; float: left; padding-top: 10px;margin-right:5px;"></a>
-      <a class="navbar-brand" href="home.php">iRecruit</a>
-    </div>
-      <ul class="nav navbar-nav navbar-right">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
-        <li><a href="home.php"><i class="fa fa-home"></i>&nbspHome</a></li>
-        <li><a href="company.php"><i class="fa fa-building"></i>&nbspCompany</a></li>
-        <li><a href="schedule.php"><i class="fa fa-calendar"></i>&nbspSchedule</a></li>
+body{
+  font-size: 20px; 
+}
+li a{
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+</style>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+body{
+  font-size: 20px; 
+}
+li a{
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+</style>
+
+<body>
+
+  <nav class="navbar navbar-default" style="background-color: #000040; height: 57px; border-bottom: 6px solid #B8860B; ">
+
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+       <a href="home.php" class="navbar-left"><img src="images/slulogo.png" style="width:38px; float: left; padding-top: 7px; margin-right: 10px;"></a>
+      <a class="navbar-brand" href="home.php" style="font-family: 'Raleway', sans-serif; font-size: 30px; font-weight: bold; color: #f2f2f2; ">iRecruit</a>
+    </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="home.php" style="  color: #f2f2f2;"><i class="fa fa-home"></i>&nbspHome</a></li>
+        <li><a href="company.php" style="  color: #f2f2f2;"><i class="fa fa-building"></i>&nbspCompany</a></li>
+        <li><a href="schedule.php" style="  color: #f2f2f2;"><i class="fa fa-calendar"></i>&nbspSchedule</a></li>
          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>&nbspUser<span class="caret"></span></a>
+          <a href="#" style="  color: #f2f2f2;"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> &nbspUser<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="profile.php"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
-            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="profile.php"><span class="glyphicon glyphicon-cog"></span>&nbspProfile</a></li>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbspLogout</a></li>
           </ul>
         </li>
       </ul>
-
-
     </div>
   </div>
 </nav>
@@ -97,18 +124,20 @@
 
 
 <div class="container-fluid text-center">
-<h1>Add New Company</h1>
+<center style="font-size: 45px; font-family: 'Lobster Two', cursive; font-weight: bold;">Add New Company</center>
   
 <hr>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" align="center">
+  
   <div class="row" >
     <div class=" col-md-2">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addsched">
         <span class="glyphicon glyphicon-plus"></span> Add Company
       </button>
-    </div>  
+    </div> 
+
     <div class="col-md-6" >
       <div class="form-group">
         <div class="input-group">

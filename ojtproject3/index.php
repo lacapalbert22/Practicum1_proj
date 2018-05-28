@@ -37,20 +37,25 @@
 		<div class="bg">
 			<div class="loginbox">
 			<img src="images/slulogo.png" class="user">
-				<h1>Login Here</h1>
+				<h1 style="font-size: 55px;">Login Here</h1>
 				<form  method="POST" enctype="multipart/form-data" class="form-horizontal">
 				<p><i class="fa fa-user-circle-o"></i>Username</p>
 				<input type="text" name="username" class="fstyle" placeholder="enter username">
 				<p><i class="fa fa-lock"></i>Password</p>
 				<input type="password" name="password" class="fstyle1" placeholder="enter password">
-					<input type="submit" name="submit">
+					<input type="submit" name="submit"><br><br>
+                    <div style="text-align: center;">
+                        <a href="register.php" class="txt1">
+                            Do not have an account? Register now!
+                        </a>
+                    </div>
 				</form>
 			</div>
 		</div>
 
 	<!--footer-->	
 	<div id="footer">
-        <p>Copyright <a href="signup.php" style="text-decoration: none; color: white;">&copy;</a> Saint Louis University 2018 All Rights Reserved.</p>
+        <p>Copyright <a href="signup.php" style="text-decoration: none; color: white; font-weight: bold;">&copy;</a> Saint Louis University 2018 All Rights Reserved.</p>
     </div>
     <!--end of footer-->
  			
