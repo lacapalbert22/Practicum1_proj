@@ -60,7 +60,7 @@ li a{
   <h1><center><b>View Events</b></center></h1><br>
 </div>
 
-<div class="container">
+<div class="container" style="font-family: 'Raleway';">
   <hr>
   </button>
 <?php
@@ -74,7 +74,7 @@ li a{
 <hr>
 </div><br>
 
-<div class="modal fade" id="time" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="time" tabindex="-1" role="dialog" aria-hidden="true" style="font-family: 'Raleway';">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -119,7 +119,7 @@ li a{
 
 
 
-<div class="container">
+<div class="container" style="font-family: 'Raleway';">
   <table class="table table-bordered">
     <th>Time</th>
     <th>Venue</th>

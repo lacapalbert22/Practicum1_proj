@@ -63,7 +63,7 @@ li a{
 <hr>
 </div>
 
-<div class="container-fluid" >
+<div class="container-fluid" style="font-family: 'Raleway';">
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Back" style="background-color: #000040;color: #f2f2f2;">
 <i class="glyphicon glyphicon-arrow-left"></i> 
  <a href="schedule.php" style="text-decoration: none; color: white;">Back</a>
@@ -76,7 +76,7 @@ li a{
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="addsched" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addsched" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: 'Raleway';">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -89,7 +89,7 @@ li a{
           <form method="POST" action="includes/add.php" autocomplete="off">
       
 
-        Company:<br>
+        <b>Company:</b><br>
         <div class="form-group">
          <select class="form-control" name="company">
       <?php
@@ -115,7 +115,7 @@ li a{
         <input class="form-control" type="text" name="companyname"  placeholder="Name" required><br>
         
         Event Description:<br>
-        <input class="form-control" type="text" name="companydesc" required><br>
+        <textarea class="form-control" type="text" name="companydesc" placeholder="Description" required rows="5"></textarea><br>
         Venue:<br> 
         <input class="form-control" type="text" name="venue"  placeholder="Venue" required><br>
         
@@ -147,7 +147,7 @@ li a{
 
 </div>
 <hr>
-<div class="container">
+<div class="container" style="font-family: 'Raleway';">
         <?php
         
         $sql = "select * , company_logo from events inner join company on events.company_fk=company.company_id
@@ -162,10 +162,10 @@ li a{
            extract($row);
 
         echo "<div class='jumbotron'style='background-color: #000040;color: #f2f2f2;border: 2px solid #B8860B;'>";
-        echo '<div class="card">';
+        echo '<div class="card"><center>';
         echo '<card class="body">';
         echo'<img src="images/company/'.$row['company_logo'].'" alt="" style="max-height: 100px; max-width: 300px;min-height: 100px; min-width: 300px;background-color:white;border-radius:10px;padding:10px;">';
-           echo  '</card></div><hr>';
+           echo  '</card></center></div><br><br>';
            echo 'Event Name:'.$row['event_name'].'<br>';
            echo 'Event Description:'.$row['event_desc'].'<br>';
            echo 'Venue:'.$row['event_venue'].'<br>';
@@ -178,10 +178,10 @@ li a{
 
 ?>
          
-          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModalLong"><span class="glyphicon glyphicon-remove-circle"></span> Delete
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModalLong" style="font-family: 'Raleway';"><span class="glyphicon glyphicon-trash"></span> Delete
           </button>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="color:black;">
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="color:black;font-family: 'Raleway';" >
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -196,7 +196,7 @@ li a{
               <div class="modal-footer">
                 <form method="POST" action="includes/delete.php?delete=<?php echo $row['id']; ?>">
                 <button class="btn btn-primary" type="submit" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Cancel</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Cancel</button>
 
                 </form>
 
