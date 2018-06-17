@@ -123,16 +123,26 @@ li a{
 ?>
 <hr>
 </div>
-
 <div class="container" style="font-family: 'Raleway';">
       
-
         <?php
+        $con = mysqli_connect('localhost', 'root', '', 'sample');
+        $id = $_GET['view'];
+        $sql = "SELECT * from events WHERE id='$id'";
+        $res = mysqli_query($con,$sql);
+        $resultCheck = mysqli_num_rows($res);
+
+         if ($resultCheck > 0) {
+          while ($row = mysqli_fetch_assoc($res)) {
+
+
            echo "<ul class='list-group'>"; 
            echo "<li class='list-group-item'><strong>Event Name:</strong></td><td> ".$row['event_name'].'</li>';
            echo "<li class='list-group-item'><strong>Event Description:</strong> ".$row['event_desc'].'</li></ul>';
 
        }
+     }
+   }
         
         ?>  
 
@@ -145,17 +155,17 @@ li a{
         {
         $con = mysqli_connect('localhost', 'root', '', 'sample');
         $id = $_GET['view'];
-        $sql = "SELECT * from schedule WHERE event_fk='$id' ORDER by sched_date DESC";
+        $sql = "SELECT * from date WHERE event_fk='$id' ORDER by date DESC";
         $res = mysqli_query($con,$sql);
         $resultCheck = mysqli_num_rows($res);
 
          if ($resultCheck > 0) {
           while ($row = mysqli_fetch_assoc($res)) {
            
-           echo "<li class='list-group-item'>".$row['sched_date'];      
+           echo "<li class='list-group-item'>".$row['date'];      
   ?>
 
-          <a href='deletesched.php?delsched=<?php echo $row['date_id']; ?>' onclick="return confirm('Are you sure to delete this schedule?')" class='btn btn-primary' style='background-color: #000040;color: #f2f2f2;float:right;'><i class="glyphicon glyphicon-trash"></i> Delete Schedule</a>
+          <a href='deletesched.php?delsched=<?php echo $row['date_id']; ?>&amp;view=<?php echo $id; ?>' onclick="return confirm('Are you sure to delete this schedule?')" class='btn btn-primary' style='background-color: #000040;color: #f2f2f2;float:right;'><i class="glyphicon glyphicon-trash"></i> Delete Schedule</a>
           <a href='viewtime.php?time=<?php echo $row['date_id']; ?>&amp;view=<?php echo $id; ?>' class='btn btn-primary' style="background-color: #000040;color: #f2f2f2;float:right;font-family: 'raleway';"><i class='glyphicon glyphicon-list-alt'></i> View</a></ul>
                
 

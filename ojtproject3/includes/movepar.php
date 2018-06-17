@@ -1,25 +1,15 @@
 <?php
 	$con = mysqli_connect('localhost', 'root', '', 'sample');
 	
-	if(!$con)
-	{
-		echo 'Not Connected to server';
-	}
+
+	$lastname = $_POST['lastname'];
+	$firstname = $_POST['firstname'];
+	$mi = $_POST['mi'];
+	$email = $_POST['email'];
+	$contact = $_POST['contact'];
+	$courseyear = $_POST['courseyear'];
 	
-	if(!mysqli_select_db($con,'events'))
-	{
-		echo '';
-	}
-	$company = $_POST['company'];
-	$name = $_POST['companyname'];
-	$desc = $_POST['companydesc'];
-	$venue = $_POST['venue'];
-	$time1 = $_POST['time1'];
-	$time2 = $_POST['time2'];
-	$date = $_POST['date'];
-	$slot = $_POST['availableslot'];
-	
-	$sql = "INSERT INTO events (event_name, event_desc, event_venue, time1, time2, event_date, available_slot, company_fk) VALUES ('$name', '$desc', '$venue', '$time1', '$time2', '$date','$slot','$company')";
+	$sql = "INSERT INTO  (event_name, event_desc, event_venue, time1, time2, event_date, available_slot, company_fk) VALUES ('$name', '$desc', '$venue', '$time1', '$time2', '$date','$slot','$company')";
 	mysqli_query($con,$sql);
 	$last_id = mysqli_insert_id($con);
 	

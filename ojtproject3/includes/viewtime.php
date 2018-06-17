@@ -84,7 +84,7 @@ li a{
         </button>
       </div>
       <div class="modal-body">
-        <form method='POST' action='addpar.php?addpar=<?php echo $id; ?>' autocomplete='off'>
+        <form method='POST' action='addtime.php?id=<?php echo $id; ?>&amp;view=<?php echo $id2; ?>' autocomplete='off'>
         <div class="form-group row">
         <div class="col-xs-6">
         Time:<input class="form-control" type="time" name="time1">
@@ -104,7 +104,7 @@ li a{
 
         <div class="modal-footer">
         <button class="btn btn-primary" type="submit" name="Submit"><i class="glyphicon glyphicon-plus"></i> Add</button> 
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i> Cancel</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i> Cancel</button>
         </div>
 
          </form>
@@ -133,19 +133,19 @@ li a{
         $con = mysqli_connect('localhost', 'root', '', 'sample');
         $id = $_GET['time'];
         $id2= $_GET['view'];
-        $sql = "SELECT * from schedule WHERE date_id ='$id'";
+        $sql = "SELECT * from time WHERE date_fk ='$id'";
         $res = mysqli_query($con,$sql);
         $resultCheck = mysqli_num_rows($res);
          if ($resultCheck > 0) {
           while ($row = mysqli_fetch_assoc($res)) {
 
            echo '<tr>'; 
-           echo '<td>'.$row['sched_time1'].'-'.$row['sched_time2'].'</td>';
-           echo '<td>'.$row['sched_venue'].'</td>';
+           echo '<td>'.$row['time1'].'-'.$row['time2'].'</td>';
+           echo '<td>'.$row['venue'].'</td>';
            ?>
            
-           <td><a href="deletesched.php?viewparticipant=<?php echo $row['date_id']; ?>" class='btn btn-primary' style='background-color: #000040;color: #f2f2f2;float:right;' onclick =" return confirm('are you sure you want to delete this event')"><i class='glyphicon glyphicon-remove'></i> Delete</a>
-           <a href="viewparticipant.php?viewparticipant=<?php echo $row['date_id']; ?>&amp;view=<?php echo $id2; ?>" class='btn btn-primary' style='background-color: #000040;color: #f2f2f2;float:right;'><i class='glyphicon glyphicon-user'></i> View Participant</a></td>
+           <td><a href="deletetime.php?deltime=<?php echo $row['time_id']; ?>&amp;view=<?php echo $id2; ?>&amp;time=<?php echo $id; ?>" class='btn btn-primary' style='background-color: #000040;color: #f2f2f2;float:right;' onclick =" return confirm('are you sure you want to delete this event')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+           <a href="viewparticipant.php?par=<?php echo $row['time_id']; ?>&amp;view=<?php echo $id2; ?>&amp;date=<?php echo $row['date_fk']; ?>" class='btn btn-primary' style='background-color: #000040;color: #f2f2f2;float:right;'><i class='glyphicon glyphicon-user'></i> View Participant</a></td>
           
 
           

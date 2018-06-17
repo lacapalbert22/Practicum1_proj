@@ -6,27 +6,23 @@
     $username = "root";
     $password = "";
     $databaseName = "sample";
-    $id = $_GET['deletepar'];
-    
+     $con = mysqli_connect($hostname, $username, $password, $databaseName);
+
+
+    $delpar = $_GET['deletepar'];
+    $id = $_GET['par'];
+    $id2= $_GET['view'];
+    $id3= $_GET['date'];
     // connect to mysql
-    $connect = mysqli_connect($hostname, $username, $password, $databaseName);
     // mysql delete query 
-    $query = "DELETE FROM `participants` WHERE `par_id` = $id";
-    $result = mysqli_query($connect, $query);
-
-    
-    /**
-    if($result)
-    {
-        echo 'Data Deleted';
-    }else{
-        echo 'Data Not Deleted';
-    }
-    **/
-    mysqli_close($connect); 
-
-
-   header("Refresh:0; url=../viewparticipant.php?viewparticipant=$id");
+    $sql = "DELETE FROM participants WHERE par_id = $delpar"; 
+   
+   if ($con->query($sql) === TRUE) {
+            header("Refresh:0; url=viewparticipant.php?par=$id&view=$id2&date=$id3");
+        } else {
+            echo "Error: " . $sql . "<br>" . $con->error;
+        }
+        $con->close();     
 ?>
 
 

@@ -12,12 +12,18 @@
 	}
 
 	$venue = $_POST['venue'];
-	$date = $_POST['date'];
-	$id = $_POST['id'];
+	$time1 = $_POST['time1'];
+	$time2 = $_POST['time2'];
+	$id = $_GET['id'];
+	$id2 = $_GET['view'];
 	
 	
-	$sql = "INSERT INTO schedule (sched_venue, sched_date, company_fk) VALUES ('$venue', '$date', '$id') where event_fk='$id'" ;
-	mysqli_query($con,$sql);
-
-	header("Refresh:0; url=../viewtime.php?time=$id")
+	$sql ="INSERT INTO time (time1, time2, venue, date_fk) VALUES ('$time1', '$time2', '$venue', '$id')";
+	
+	if ($con->query($sql) === TRUE) {
+		   	header("Refresh:0; url=viewtime.php?time=$id&view=$id2");
+		} else {
+		    echo "Error: " . $sql . "<br>" . $con->error;
+		}
+		$con->close();     
 ?>

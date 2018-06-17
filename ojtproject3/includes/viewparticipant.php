@@ -59,17 +59,18 @@ li a{
 <div class="container-fluid" style="font-family: 'Lobster Two';">
   <h1><center><b>View Participant</b></center></h1><br>
 </div>
+<?php
+  $id=$_GET['par'];
+  $id2=$_GET['view'];
+  $id3=$_GET['date'];
+?>
 
 
 <div class="container" style="font-family: 'Raleway';">
-<a href="viewtime.php?time= &amp;view=" class="btn btn-default" style="background-color: #000040;color: #f2f2f2;"><span class="glyphicon glyphicon-arrow-left" ></span> Back</a>
+<a href="viewtime.php?time=<?php echo $id3; ?>&amp;view=<?php echo $id2; ?>" class="btn btn-default" style="background-color: #000040;color: #f2f2f2;"><span class="glyphicon glyphicon-arrow-left" ></span> Back</a>
 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#adddate" style="background-color: #000040;color: #f2f2f2;"><i class="glyphicon glyphicon-plus"></i> Add Participants</button>
 </div>
-<?php
 
-  $id=$_GET['viewparticipant'];
-
-?>
 <div id="adddate" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -79,17 +80,19 @@ li a{
       </div>
       <div class="modal-body">
         <form action="addpar.php" method="post">
-          <input type="hidden" name="addpar" value="<?php  echo $id; ?>">
+           <input type="hidden" name="time_fk" value="<?php  echo $id; ?>">
+           <input type="hidden" name="view" value="<?php  echo $id2; ?>">
+           <input type="hidden" name="date" value="<?php  echo $id3; ?>">
+
           <h4>First name:</h4><input class="form-control" type="text" name="firstname" autocomplete="off">
           <h4>Last name:</h4><input class="form-control" type="text" name="lastname" autocomplete="off">
           <h4>Middle Initial:</h4><input class="form-control" type="text" name="mi" autocomplete="off">
           <h4>Email:</h4><input class="form-control" type="text" name="email" autocomplete="off">
-          <h4>Course:</h4><input class="form-control" type="text" name="course" autocomplete="off">
-          <h4>Year:</h4><input class="form-control" type="text" name="year" autocomplete="off">
+          <h4>Course and Year:</h4><input class="form-control" type="text" name="courseyear" autocomplete="off">
           <h4>Contact:</h4><input class="form-control" type="text" name="contact" autocomplete="off">
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>Add</button>
+        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Add</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i> Cancel</button>
       </div>
         </form>
@@ -103,7 +106,6 @@ li a{
     <th>Name</th>
     <th>Email</th>
     <th>Course</th>
-    <th>Year</th>
     <th>Contact</th>
     
 
@@ -111,11 +113,12 @@ li a{
 
      <?php
         
-        if( isset($_GET['viewparticipant']) )
-        {
+        
         $con = mysqli_connect('localhost', 'root', '', 'sample');
-        $id = $_GET['viewparticipant'];
-        $sql = "SELECT * from participants WHERE date_fk='$id'";
+        $id=$_GET['par'];
+        $id2=$_GET['view'];
+        $id3=$_GET['date'];
+        $sql = "SELECT * from participants WHERE time_fk='$id'";
         $res = mysqli_query($con,$sql);
         $resultCheck = mysqli_num_rows($res);
 
@@ -127,23 +130,80 @@ li a{
            echo  $row['par_firstname'].'';
            echo ' '.$row['par_mi'].'</td>';
            echo '<td>'.$row['par_email'].'</td>';
-           echo '<td>'.$row['course'].'</td>';
-           echo '<td>'.$row['year'].'</td>';
+           echo '<td>'.$row['courseyear'].'</td>';
            echo '<td>'.$row['par_contact'].'</td>';
            ?>
+           <td><a href="" class='btn btn-primary' style='background-color: #000040;color: #f2f2f2;'><i class="glyphicon glyphicon-comment"></i> Email</a>
+           <a href="deletepar.php?deletepar=<?php echo $row['par_id']; ?>&amp;par=<?php echo $id; ?>&amp;view=<?php echo $id2; ?>&amp;date=<?php echo $id3; ?>" class='btn btn-primary' style='background-color: #000040;color: #f2f2f2;' onclick="return confirm('Are you sure you want to delete this participant?')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#movePar" value="<?php echo $row['id']; ?>"style='background-color: #000040;color: #f2f2f2;'>
+       <i class="glyphicon glyphicon-th-list"></i> Move Participant
+      </button></td></tr>
 
-           <td><a href="viewparticipant.php?viewparticipant=<?php echo $row['id']; ?>" class='btn btn-primary' style='background-color: #000040;color: #f2f2f2;'><i class="glyphicon glyphicon-comment"></i> Email</a>
-           <a href="deletepar.php?deletepar=<?php echo $id; ?>" class='btn btn-primary' style='background-color: #000040;color: #f2f2f2;' onclick="return confirm('Are you sure you want to delete this participant?')"><i class="glyphicon glyphicon-remove"></i> Delete</a></td></tr>
+       <div class="modal fade" id="movePar">
+      <div class="modal-dialog">
+      <div class="modal-content">
+
+      <div class="modal-header">
+        <h3 class="modal-title">Move Participants</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form action="movepar.php" method="POST">
+          <input type="hidden" name="lastname" value="<?php  echo $row['par_lastname']; ?>">
+          <input type="hidden" name="firstname" value="<?php  echo $row['par_firstname']; ?>">
+          <input type="hidden" name="mi" value="<?php  echo $row['par_mi']; ?>">
+          <input type="hidden" name="email" value="<?php  echo $row['par_email']; ?>">
+          <input type="hidden" name="courseyear" value="<?php  echo $row['courseyear']; ?>">
+          <input type="hidden" name="contact" value="<?php  echo $row['par_contact']; ?>">
+         
+      Choose a time:<br>
+        <div class="form-group">
+         <select class="form-control" name="timemove">
+      <?php
+             $id=$_GET['par'];
+             $id2=$_GET['view'];
+             $id3=$_GET['date'];
+             $sql = "select * from time where date_fk='$id3'";
+            $result = mysqli_query($con,$sql);
+            $resultCheck = mysqli_num_rows($result);
+
+        /*$row = mysqli_fetch_array($result);*/
+        
+            if ($resultCheck > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+            extract($row);
+
+              echo '<option value="'.$row['time_id'].'">'.$row['time1'].'-'.$row['time2'].'</option>';
+
+                }
+              }
+            ?>
+          </select>
+          </div>
+
+      <div class="modal-footer">
+         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="glyphicon glyphicon-check"></i> Move</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i> Close</button>
+      </div>
+
+    </form>
+
+    </div>
+  </div>
+</div>
           
 
-            <?php
+  
+  <?php
           
 
-        }
+        
       }
     }
 
         ?>
+     
+
 
 </table>
 </div>
